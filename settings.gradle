@@ -1,0 +1,5 @@
+include ':usecase'
+include ':storage'
+include ':api'
+include ':app'
+rootProject.name = "NordPass TechTask"

@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply {
+    from "../common.gradle"
+}
+
+android {
+    def schemasDir = "$projectDir/schemas".toString()
+
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.incremental"   : "true",
+                        "room.schemaLocation": schemasDir
+                ]
+            }
+        }
+    }
+
+    sourceSets {
+        androidTest.assets.srcDirs += files(schemasDir)
+    }
+}
+
+dependencies {
+    implementation project(":usecase")
+
+    def roomVersion = '2.3.0'
+    api "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-rxjava3:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+}

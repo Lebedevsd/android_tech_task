@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NordPass TechTask</string>
+    <string name="error_generic">Opps!</string>
+    <string name="retryButtonLabel">Retry</string>
+    <string name="todoListScreenTitle">Todo</string>
+    <string name="todoButtonText">Todo</string>
+    <string name="finishedButtonText">Finished</string>
+    <string name="editButtonText">Edit</string>
+    <string name="saveButtonText">Save</string>
+    <string name="completedLabel">Completed</string>
+    <string name="unfinishedLabel">Unfinished</string>
+    <string name="editTitle">Title</string>
+    <string name="errorTitleEmpty">Title can not be empty</string>
+    <string name="darkTheme">dark theme</string>
+</resources>

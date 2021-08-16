@@ -1,0 +1,21 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply {
+    from "../common.gradle"
+}
+
+dependencies {
+    implementation project(":usecase")
+
+    def retrofitVersion = '2.9.0'
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:2.7.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+}

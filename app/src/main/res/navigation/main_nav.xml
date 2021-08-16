@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.nordpass.task.ui.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/actionTodoList"
+            app:destination="@id/todoListFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.nordpass.task.ui.list.TodoListFragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/actionTodoDetails"
+            app:destination="@id/todoDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoDetailsFragment"
+        android:name="com.nordpass.task.ui.details.TodoDetailsFragment"
+        android:label="TodoDetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="todo"
+            app:argType="com.nordpass.tt.usecase.Todo" />
+
+        <action
+            android:id="@+id/actionTodoEdit"
+            app:destination="@id/todoEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoEditFragment"
+        android:name="com.nordpass.task.ui.edit.TodoEditFragment"
+        android:label="TodoEditFragment"
+        tools:layout="@layout/fragment_edit">
+        <argument
+            android:name="todo"
+            app:argType="com.nordpass.tt.usecase.Todo" />
+    </fragment>
+
+</navigation>
